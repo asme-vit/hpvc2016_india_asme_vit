@@ -1,0 +1,66 @@
+$(document).ready(function(){
+    $("#a1").hide();
+    $("#a2").hide();
+    $("#a3").hide();
+    $("#a4").hide();
+    $("#a5").hide();
+    $("#a6").hide();
+    $("#a7").hide();
+    $("#a8").hide();
+    $("#a9").hide();
+    $("#a10").hide();
+    $("#a11").hide();
+    $("#a12").hide();
+    $("#f1").on("click",function()
+    {
+        $("#a1").slideToggle(500);
+    })
+    $("#f2").on("click",function()
+    {
+        $("#a2").slideToggle(500);
+    })
+    $("#f3").on("click",function()
+    {
+        $("#a3").slideToggle(500);
+    })
+    $("#f4").on("click",function()
+    {
+        $("#a4").slideToggle(500);
+    })
+    $("#f5").on("click",function()
+    {
+        $("#a5").slideToggle(500);
+    })
+    $("#f6").on("click",function()
+    {
+        $("#a6").slideToggle(500);
+    })
+
+    $("#f7").on("click",function()
+    {
+        $("#a7").slideToggle(500);
+    })
+    $("#f8").on("click",function()
+    {
+        $("#a8").slideToggle(500);
+    })
+    $("#f9").on("click",function()
+    {
+        $("#a9").slideToggle(500);
+    })
+    $("#f10").on("click",function()
+    {
+        $("#a10").slideToggle(500);
+    })
+    $("#f11").on("click",function()
+    {
+        $("#a11").slideToggle(500);
+    })
+    $("#f12").on("click",function()
+    {
+        $("#a12").slideToggle(500);
+    })
+
+
+
+})
