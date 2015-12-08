@@ -13,7 +13,7 @@ if(isset($_GET['err'])){
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Registration form | HPVC-2015</title>
+    <title>VEHICLE REGISTRATION | HPVC-2016</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
