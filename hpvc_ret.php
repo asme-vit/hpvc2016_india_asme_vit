@@ -10,7 +10,7 @@
     $txndate=$_POST['txndate'];
    $status = $_POST['status'];
 	 $login=substr($refno,4,4);
-	 $amount=7000;
+	 //$amount=7000;
 ?>
 
 <html>
@@ -83,6 +83,7 @@
                                 $col_nm=$row['college_name'];
                                 $phone=$row['phone'];
                                 $email=$row['email'];
+								$amount=$row['amount'];
 								
                                 if($numb==0){
                                      header("Location: http://hpvcindia.in");
