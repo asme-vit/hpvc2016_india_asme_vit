@@ -81,7 +81,7 @@ if(isset($_GET['err'])){
 <!-- Registration form - START -->
 <div class="container">
     <div class="row">
-        <form role="form" action="check.php" method="post">
+        <form role="form" action="vehicle_reg.php" method="post">
 		<div class="col-lg-3"></div>
             <div class="col-lg-6">
                 <div class="well well-sm"><strong><span style="color:red;" class="glyphicon glyphicon-asterisk"></span>&nbsp;Required Field</strong></div>
