@@ -37,8 +37,6 @@
                         $res=mysqli_query($con,$sql);
 					
                             //Payment gateway redirection
-
-                            $name=$regno;
                             $amount=7000;
                             $tran= "HPVC".$refno;
                             echo $tran;
@@ -59,8 +57,7 @@
                         $res=mysqli_query($con,$sql);
 						
 						//Payment gateway redirection
-
-                            $name=$regno;
+						
                             $amount=7000;
                             $tran= "HPVC".$refno;
                             echo $tran;

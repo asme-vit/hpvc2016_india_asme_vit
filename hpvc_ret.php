@@ -105,8 +105,7 @@
                                 echo'<center><br><br><br>Congratulations <span style="color:#f16261;">'.$name.'</span>, your payment is Succesfull.<br>we have mailed you your transection details!';
                                  echo' <table>
                                 <tr>';
-
-                                //echo '<br><tr><td>Contignent No </td><td>: <span style="color:#f16261;">'.$invID.'</span></td></tr>';
+								
                                 echo'<br><tr><td>Team Name  </td><td>: <span style="color:#f16261;">'.$team_nm.'</span></td></tr>';
                                 echo '<br><tr><td>Reference No </td><td>: <span style="color:#f16261;">'.$refno.'</span></td></tr>';
                                 echo'<br><tr><td>Transaction ID  </td><td>: <span style="color:#f16261;">'.$tid.'</span></td></tr>';
@@ -233,7 +232,7 @@
         $("#btnPrint").live("click", function () {
             var divContents = $("#printbody").html();
             var printWindow = window.open('', '', '');
-            printWindow.document.write('<html><head><title>HPVC2015</title>');
+            printWindow.document.write('<html><head><title>HPVC2016</title>');
             printWindow.document.write('</head><body style="padding-top:50px;"><center>');
             printWindow.document.write(divContents);
             printWindow.document.write('</center></body></html>');

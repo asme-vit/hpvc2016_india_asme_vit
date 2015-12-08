@@ -68,7 +68,7 @@
 	 </div>
 		<div class="row">
             <div class="col-lg-4">
-			  <form  class="form-horizontal" role="form" action="reg.php" method="post">
+			  <form  class="form-horizontal" role="form" action="participant_reg.php" method="post">
                 <div class="form-group">
 				<label for="InputName">Enter Full Name</label>
 					<div class="input-group col-sm-12">

@@ -1,27 +1,17 @@
  <?php
 //    if(!isset($_POST['g-recaptcha-response'])){
-//       header("Location: http://hpvcindia.in/form.php");
+//        header("Location: http://hpvcindia.in/form.php");
 //    }
 //    else{
-    
-$servername = "localhost";
-$username="root";
-$password="";
-$dbname="hpvciks8_2015";
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+        include("connection.php");
+        //echo "hello";
  //       if($_SERVER["REQUEST_METHOD"] === "POST"){
 
-   //         $recaptcha_secret = "6LeMcg8TAAAAAM5xiagb-ltLLvMgQHcTp7FxICaI";
-    //        $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$recaptcha_secret."&response=".$_POST['g-recaptcha-response']);
-    //        $response = json_decode($response, true);
+ //           $recaptcha_secret = "6LeMcg8TAAAAAM5xiagb-ltLLvMgQHcTp7FxICaI";
+ //           $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$recaptcha_secret."&response=".$_POST['g-recaptcha-response']);
+ //           $response = json_decode($response, true);
 
-      //      if($response["success"] === true){
+ //       if($response["success"] === true){
 				$name1=$_POST['name1'];
 				$col1=$_POST['col1'];
 				$team1=$_POST['team1'];
@@ -94,101 +84,78 @@ if (!$conn) {
 				
 					
 					$sql = "Select max(refno) from participant";
-					$res1 = mysqli_query($conn,$sql);
+					$res1 = mysqli_query($con,$sql);
 					$row = mysqli_fetch_row($res1);
 					$refno = $row[0] + 1;
 					$name=$name1;
                      $amount=1000;
                      $tran= "HPVC".$refno;
-                     echo $tran;
+					 
 							$sql="INSERT INTO participant values('$refno','$name1','$col1','$team1','$colr1','$email1','$phone1','$amount')";
-							$res=mysqli_query($conn, $sql);
+							$res=mysqli_query($con, $sql);
 						
 						 if(!empty($name2)){
-						 
+						 $amount = $amount + 1000;
 							$sql="INSERT INTO participant values('$refno','$name2','$col2','$team2','$colr2','$email2','$phone2','$amount')";
-							$res=mysqli_query($conn,$sql);
+							$res=mysqli_query($con,$sql);
 						}
 						
 						if(!empty($name3)){
-						 
+						  $amount = $amount + 1000;
 							$sql="INSERT INTO participant values('$refno','$name3','$col3','$team3','$colr3','$email3','$phone3','$amount')";
-							$res=mysqli_query($conn,$sql);
+							$res=mysqli_query($con,$sql);
 						}
 						
 						if(!empty($name4)){
-						 
+						  $amount = $amount + 1000;
 							$sql="INSERT INTO participant values('$refno','$name4','$col4','$team4','$colr4','$email4','$phone4','$amount')";
-							$res=mysqli_query($conn,$sql);
+							$res=mysqli_query($con,$sql);
 						}
 						
 						if(!empty($name5)){
-						 
+						  $amount = $amount + 1000;
 							$sql="INSERT INTO participant values('$refno','$name5','$col5','$team5','$colr5','$email5','$phone5','$amount')";
-							$res=mysqli_query($conn,$sql);
+							$res=mysqli_query($con,$sql);
 						}
 						
 						if(!empty($name6)){
-						 
+						  $amount = $amount + 1000;
 							$sql="INSERT INTO participant values('$refno','$name6','$col6','$team6','$colr6','$email6','$phone6','$amount')";
-							$res=mysqli_query($conn,$sql);
+							$res=mysqli_query($con,$sql);
 						}
 						
 						if(!empty($name7)){
-						 
+						  $amount = $amount + 1000;
 							$sql="INSERT INTO participant values('$refno','$name7','$col7','$team7','$colr7','$email7','$phone7','$amount')";
-							$res=mysqli_query($conn,$sql);
+							$res=mysqli_query($con,$sql);
 						}
 						
 						if(!empty($name8)){
-						 
+						  $amount = $amount + 1000;
 							$sql="INSERT INTO participant values('$refno','$name8','$col8','$team8','$colr8','$email8','$phone8','$amount')";
-							$res=mysqli_query($conn,$sql);
+							$res=mysqli_query($con,$sql);
 						}
 						
 						if(!empty($name9)){
-						 
+						  $amount = $amount + 1000;
 							$sql="INSERT INTO participant values('$refno','$name9','$col9','$team9','$colr9','$email9','$phone9','$amount')";
-							$res=mysqli_query($conn,$sql);
+							$res=mysqli_query($con,$sql);
 						}
 						
 						if(!empty($name10)){
-						 
+						  $amount = $amount + 1000;
 							$sql="INSERT INTO participant values('$refno','$name10','$col10','$team10','$colr10','$email10','$phone10','$amount')";
-							$res=mysqli_query($conn,$sql);
+							$res=mysqli_query($con,$sql);
 						}
 						
 						
 							
-							//Payment
-							
+							//Payment gateway redirection
+							$name = $name1;
+							$tran= "HPVC".$refno;
+                            echo $tran;
 
-/*			   if($email1!==""){
-                    header("Location: http:hpvcindia.in/form.php?err=em");
-                }
-                else{
-                    $sql="Select * from temp where email='$email'";
-                    $res=mysqli_query($con,$sql);
-                    $row=mysqli_fetch_array($res);
-                    $count_e=mysqli_num_rows($res);
-                    if($count_e==0){
-                        $sql="INSERT INTO temp values('null','$team_nm','$col_nm','$cap_nm','$phone','$email')";
-                        $res=mysqli_query($con,$sql);
-                        if($res){
-                            $invID1=mysqli_insert_id($con);
-                            //Payment gateway redirection
-
-                            $name=$cap_nm;
-                            $amount=2000;
-                            $invID1=str_pad($invID1, 4, '0', STR_PAD_LEFT);
-                            $invID1=str_pad($invID1, 5, 'C', STR_PAD_LEFT);
-                            $invID1=str_pad($invID1, 6, 'V', STR_PAD_LEFT);
-                            $invID1=str_pad($invID1, 7, 'P', STR_PAD_LEFT);
-                            $invID1=str_pad($invID1, 8, 'H', STR_PAD_LEFT);
-                            $tran=$invID1;
-                            //echo $tran;
-
-                            echo '<form id="payment" method="POST" action="https://academics.vit.ac.in/online_application2/onlinepayment/Online_pay_request1.asp">';
+         /*                 echo '<form id="payment" method="POST" action="https://academics.vit.ac.in/online_application2/onlinepayment/Online_pay_request1.asp">';
                             echo'<input type="hidden" name="id_trans" value="'.$tran.'">
                             <input type="hidden" name="id_name" value="'.$name.'">
                             <input type="hidden" name="id_event" value="11">
@@ -196,27 +163,10 @@ if (!$conn) {
                             <input type="hidden" name="id_merchant" value="1010">
                             <input type="hidden" name="id_password" value="hpV6!1uLqw9">';
                             echo '</form>'; 
-                
-                
-                        }
-                        else{
-                            echo mysqli_error($con);
-                        }
-                   }    
-                        }
-                        else{
-                            echo mysqli_error($con);
-                        }
-                    }
-                }
-            }
+		*/ 
 
-            else{
-                 header("Location: http://hpvcindia.in/form.php");
-            }
-        }
-//    }*/
-mysqli_close($conn);
+
+mysqli_close($con);
 ?>
 
 <html>

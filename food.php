@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Food and Accomodation| HPVC-2015</title>
+    <title>Food and Accomodation| HPVC-2016</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
@@ -64,7 +64,7 @@
 <!-- Registration form - START -->
 <div class="container">
     <div class="row">
-        <form role="form" action="check.php" method="post">
+        <form role="form" action="food_reg.php" method="post">
             <div class="col-lg-6">
                 <div class="well well-sm"><strong><span style="color:red;" class="glyphicon glyphicon-asterisk"></span>&nbsp;You should either register the vehicle or participants to get the accomodation!</strong></div>
                 <div class="form-group">

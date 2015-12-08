@@ -12,8 +12,10 @@
  //           $response = json_decode($response, true);
 
  //       if($response["success"] === true){
-                $email=$_SESSION["user"];
-				$name=$_SESSION["name"];
+             //   $email=$_SESSION["user"];
+			//	$name=$_SESSION["name"];
+			$email="karanjdesai2013@gmail.com";
+			$name="dev_check";
                 $food=$_POST['food'];
                 $acc=$_POST['acc'];
                 $no=$_POST['no'];
@@ -36,19 +38,15 @@
 					
 					
                     if($count_e==0){
-						header("Location: mail.php");
+						header("Location: main.php?err=em");
 					}
 					else
 					{
-						if()
-						{
-                        $sql="INSERT INTO food values('$email','$name','$phone','$team_nm','$col_nm','$regno','$asme_id','$refno','$amount')";
+                        $sql="INSERT INTO food values('$email','$name','$food','$acc','$no','$amount_food_total','$amount_acc_total','$amount','$refno')";
                         $res=mysqli_query($con,$sql);
 					
                             //Payment gateway redirection
-
-                            $name=$regno;
-                            $amount=7000;
+							
                             $tran= "HPVC".$refno;
                             echo $tran;
 
@@ -61,29 +59,6 @@
                             <input type="hidden" name="id_password" value="hpV6!1uLqw9">';
                             echo '</form>'; 
 		*/ 
-					}
-                	else
-					{
-						$sql="UPDATE vehicle SET team_name='".$team_nm."',college_name='".$col_nm."',asme_id='".$asme_id."',reference_no='".$refno."',college_regno='".$regno."',name='".$name."',phone='".$phone."' WHERE email='".$email."'";
-                        $res=mysqli_query($con,$sql);
-						
-						//Payment gateway redirection
-
-                            $name=$regno;
-                            $amount=7000;
-                            $tran= "HPVC".$refno;
-                            echo $tran;
-
-         /*                  echo '<form id="payment" method="POST" action="https://academics.vit.ac.in/online_application2/onlinepayment/Online_pay_request1.asp">';
-                            echo'<input type="hidden" name="id_trans" value="'.$tran.'">
-                            <input type="hidden" name="id_name" value="'.$name.'">
-                            <input type="hidden" name="id_event" value="11">
-                            <input type="hidden" name="amt_event" value="'.$amount.'">
-                            <input type="hidden" name="id_merchant" value="1010">
-                            <input type="hidden" name="id_password" value="hpV6!1uLqw9">';
-                            echo '</form>'; 
-		*/ 
-					}
 					}
             
 

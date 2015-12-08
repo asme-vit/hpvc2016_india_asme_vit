@@ -1,15 +1,4 @@
 ﻿<!DOCTYPE html>
-<!--
-<?php
-if(isset($_GET['err'])){
-    if ($_GET['err']=="em") {
-        echo '<script>
-            alert("Your email address alredy exists!!");
-        </script>';
-    }
-}
-?>
--->
 <html>
 <head>
     <meta charset="utf-8" />

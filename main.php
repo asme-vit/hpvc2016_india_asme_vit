@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<!--
 <?php
 if(isset($_GET['err'])){
     if ($_GET['err']=="em") {
         echo '<script>
-            alert("Your email address alredy exists!!");
+            alert("your email is nither in vehicle nor in participant registration!");
         </script>';
     }
 }
 ?>
--->
 <html>
 <head>
     <meta charset="utf-8" />
