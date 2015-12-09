@@ -90,67 +90,110 @@ if($_SESSION["email"] == "")
 				$phone10=$_POST['phone10'];
 				
 					
-					$sql = "Select max(refno) from participant";
+					$sql = "Select max(reference_no) from participant";
 					$res1 = mysqli_query($con,$sql);
 					$row = mysqli_fetch_row($res1);
 					$refno = $row[0] + 1;
 					$name=$name1;
-                     $amount=1000;
+                     //$amount=1000;
+					 $flag = 0;
                      $tran= "HPVC".$refno;
 					 
+						 if(!empty($name1))
+						 {
+							 $flag = $flag + 1;
+						 }
+						 if(!empty($name2))
+						 {
+							 $flag = $flag + 1;
+						 }
+						 if(!empty($name3))
+						 {
+							 $flag = $flag + 1;
+						 }
+					     if(!empty($name4))
+						 {
+							 $flag = $flag + 1;
+						 }
+						 if(!empty($name5))
+						 {
+							 $flag = $flag + 1;
+						 }
+						 if(!empty($name6))
+						 {
+							 $flag = $flag + 1;
+						 }
+						 if(!empty($name7))
+						 {
+							 $flag = $flag + 1;
+						 }
+						 if(!empty($name8))
+						 {
+							 $flag = $flag + 1;
+						 }
+						 if(!empty($name9))
+						 {
+							 $flag = $flag + 1;
+						 }
+						 if(!empty($name10))
+						 {
+							 $flag = $flag + 1;
+						 }
+					 $amount = $flag * 1000; 
+					 if(!empty($name1)){
 							$sql="INSERT INTO participant values('$refno','$name1','$col1','$team1','$colr1','$email1','$phone1','$amount')";
 							$res=mysqli_query($con, $sql);
-						
+					 }
 						 if(!empty($name2)){
-						 $amount = $amount + 1000;
+						
 							$sql="INSERT INTO participant values('$refno','$name2','$col2','$team2','$colr2','$email2','$phone2','$amount')";
 							$res=mysqli_query($con,$sql);
 						}
 						
 						if(!empty($name3)){
-						  $amount = $amount + 1000;
+						 
 							$sql="INSERT INTO participant values('$refno','$name3','$col3','$team3','$colr3','$email3','$phone3','$amount')";
 							$res=mysqli_query($con,$sql);
 						}
 						
 						if(!empty($name4)){
-						  $amount = $amount + 1000;
+						
 							$sql="INSERT INTO participant values('$refno','$name4','$col4','$team4','$colr4','$email4','$phone4','$amount')";
 							$res=mysqli_query($con,$sql);
 						}
 						
 						if(!empty($name5)){
-						  $amount = $amount + 1000;
+						
 							$sql="INSERT INTO participant values('$refno','$name5','$col5','$team5','$colr5','$email5','$phone5','$amount')";
 							$res=mysqli_query($con,$sql);
 						}
 						
 						if(!empty($name6)){
-						  $amount = $amount + 1000;
+				
 							$sql="INSERT INTO participant values('$refno','$name6','$col6','$team6','$colr6','$email6','$phone6','$amount')";
 							$res=mysqli_query($con,$sql);
 						}
 						
 						if(!empty($name7)){
-						  $amount = $amount + 1000;
+				
 							$sql="INSERT INTO participant values('$refno','$name7','$col7','$team7','$colr7','$email7','$phone7','$amount')";
 							$res=mysqli_query($con,$sql);
 						}
 						
 						if(!empty($name8)){
-						  $amount = $amount + 1000;
+	
 							$sql="INSERT INTO participant values('$refno','$name8','$col8','$team8','$colr8','$email8','$phone8','$amount')";
 							$res=mysqli_query($con,$sql);
 						}
 						
 						if(!empty($name9)){
-						  $amount = $amount + 1000;
+
 							$sql="INSERT INTO participant values('$refno','$name9','$col9','$team9','$colr9','$email9','$phone9','$amount')";
 							$res=mysqli_query($con,$sql);
 						}
 						
 						if(!empty($name10)){
-						  $amount = $amount + 1000;
+				
 							$sql="INSERT INTO participant values('$refno','$name10','$col10','$team10','$colr10','$email10','$phone10','$amount')";
 							$res=mysqli_query($con,$sql);
 						}
@@ -160,7 +203,10 @@ if($_SESSION["email"] == "")
 							//Payment gateway redirection
 							$name = $name1;
 							$tran= "HPVC".$refno;
+							
+							echo $amount;
                             echo $tran;
+							
 
          /*                 echo '<form id="payment" method="POST" action="https://academics.vit.ac.in/online_application2/onlinepayment/Online_pay_request1.asp">';
                             echo'<input type="hidden" name="id_trans" value="'.$tran.'">

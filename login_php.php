@@ -28,7 +28,6 @@ if($f==1)
 		session_start();
 		$_SESSION["name"] ="$_POST[uname]";
 		$_SESSION["email"] ="$_POST[email]";
-		$_SESSION["logout"] = "no";
 		header("location:main.php");
 }
 
