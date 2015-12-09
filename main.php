@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <?php
+session_start();
+?>
+<?php
 if(isset($_GET['err'])){
     if ($_GET['err']=="em") {
         echo '<script>

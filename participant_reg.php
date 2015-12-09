@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
  <?php
 //    if(!isset($_POST['g-recaptcha-response'])){
 //        header("Location: http://hpvcindia.in/form.php");
