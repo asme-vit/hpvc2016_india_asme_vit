@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<?php
+if(isset($_GET['err'])){
+    if ($_GET['err']=="em") {
+        echo '<script>
+            alert("error!");
+        </script>';
+    }
+}
+?>
 <html>
 <head>
 <title>SIGNUP</title>
@@ -79,9 +88,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="main-info1">
 					<h3>SIGNUP</h3>
-					<form action="signup_yes.php" method="POST" name="form1" onsubmit="return validate();">
+					<form action="signup_php.php" method="POST" name="form1" onsubmit="return validate();">
 						<input type="text" name="uname" placeholder="Name" required> <p id="username"></p>
-						<input type="text" name="email" placeholder="Email" required><p id="email"></p>
+						<input type="email" name="email" placeholder="Email" required><p id="email"></p>
 						<input type="password" name="pass" placeholder="Password" required>
 						<input type="password" name="cpass" placeholder="Confirm Password" required ><span id="cpassword"></span>
 						<input type="submit" value="Signup">

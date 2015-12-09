@@ -67,7 +67,7 @@ if(isset($_GET['err'])){
 	<button type="button" class="btn btn-info btn-block btn-lg"> your previous registrations</button>
 	<br>
 	<?php
-	
+		
 	?>
 	</div>
 

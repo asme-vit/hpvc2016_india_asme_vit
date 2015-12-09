@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<?php
+if(isset($_GET['err'])){
+    if ($_GET['err']=="em") {
+        echo '<script>
+            alert("error!");
+        </script>';
+    }
+}
+?>
 <html>
 <head>
 <title>LOGIN</title>
@@ -64,8 +73,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="main-info1">
 					<h3>LOGIN</h3>
-					<form action="login_yes.php" method="POST">
-						<input type="text" name="uname" placeholder="Email" required> 
+					<form action="login_php.php" method="POST">
+						<input type="email" name="email" placeholder="Email" required> 
 						<input type="password" name="pass" placeholder="Password" required>
 						<input type="submit" value="LOGIN">
 					</form>
