@@ -44,7 +44,7 @@ if($_SESSION["email"] == "")
             <div id="transparent" style="padding-top: 15px;">
             <div class="collapse navbar-collapse" id="main-navbar-collapse" style="margin-right: 0px;">
                 <ul class="nav navbar-nav navbar-left" style="margin-left: 250px;font-size:large;">
-                    <li ><a href="http://hpvcindia.in#top">Home</a></li>
+                    <li ><a href="main.php">MyHome</a></li>
                     <li><a href="http://hpvcindia.in#about">About</a></li>
                     <!--<li><a href="#services">Sponsors</a></li>-->
                     <li><a href="http://hpvcindia.in#rules">Rules</a></li>
