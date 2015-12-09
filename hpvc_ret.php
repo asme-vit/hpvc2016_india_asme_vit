@@ -16,7 +16,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Payment Receipt| HPVC-2016</title>
+    <title>Payment Receipt|HPVC-2016</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
@@ -60,6 +60,12 @@
 
         </div>
     </nav>
+	<div class="container" align="right">
+	<span style="color:red;">HELLO </span>
+	<span><?php echo $_SESSION["email"];?>
+	<a href="logout_php.php" role="button" class="btn btn-primary btn-xs">Logout</a>
+	</span>
+	</div>
 <div class="container">
 
 				<div class="row sidebar-page" style="margin-top:140px;">
@@ -74,16 +80,48 @@
 
                         	if($status=="0300"){
 								
+								if($login<=2000) //vehicle
+								{
 								$sql65="SELECT * from vehicle WHERE reference_no=".$login;
                                 $res=mysqli_query($con,$sql65);
                                 $numb=mysqli_num_rows($res);
 								$row=mysqli_fetch_array($res);
+								
                                 $team_nm=$row['team_name'];
                                 $name=$row['name'];
                                 $col_nm=$row['college_name'];
                                 $phone=$row['phone'];
                                 $email=$row['email'];
 								$amount=$row['amount'];
+								}
+								else if($login<=3000)  //participant
+								{
+								$sql65="SELECT * from participant WHERE reference_no=".$login;
+                                $res=mysqli_query($con,$sql65);
+                                $numb=mysqli_num_rows($res);
+								$row=mysqli_fetch_array($res);
+								
+                                $team_nm=$row['team_name'];
+                                $name=$row['name'];
+                                $col_nm=$row['college_name'];
+                                $phone=$row['phone'];
+                                $email=$row['email'];
+								$amount=$row['amount'];
+								}
+								else if($login>3000)  //food
+								{
+								$sql65="SELECT * from food WHERE reference_no=".$login;
+                                $res=mysqli_query($con,$sql65);
+                                $numb=mysqli_num_rows($res);
+								$row=mysqli_fetch_array($res);
+								
+                                $team_nm="";
+                                $name=$row['email'];
+                                $col_nm="";
+                                $phone="";
+                                $email=$row['email'];
+								$amount=$row['amount'];
+								}
 								
                                 if($numb==0){
                                      header("Location: http://hpvcindia.in");
@@ -194,21 +232,20 @@
                 				$headers .= $attachment.$eol.$eol;
                 				$headers .= "--".$separator."--";
                 				
-                				//mail($to, $subject, "", $headers);
+             //   				mail($to, $subject, "", $headers);
 
                             }
-                       		else if($status=="0399"){
-
-                                $sql="INSERT into no_payment values('null','".$refno."','".$status."',".$login.");";
-                                $res=mysqli_query($con,$sql);
-                                
+                       		else if($status=="0399")
+							{
+								
                        		   echo'Payment Failed!<br>Please try again after some time or choose a different payment method'; 
 
-                       		   }
+                       		}
 
-                       		else{
+                       		else
+							{
                        		   echo'Payment Failed!<br>Please try again after some time or choose a different payment method';
-                       		   }
+                       		}
                             ?>
                         </h3>
                     </center>

@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <?php
+session_start();
+?>
+<?php
 if(isset($_GET['err'])){
     if ($_GET['err']=="em") {
         echo '<script>
@@ -10,7 +13,7 @@ if(isset($_GET['err'])){
 ?>
 <html>
 <head>
-<title>LOGIN</title>
+<title>LOGIN|HPVC2016</title>
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
@@ -78,6 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<input type="password" name="pass" placeholder="Password" required>
 						<input type="submit" value="LOGIN">
 					</form>
+					<a href="signup.php">signup</a>
 				</div>
 			</div>
 			<div class="copy-right">

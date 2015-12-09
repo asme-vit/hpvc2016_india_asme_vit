@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <?php
 session_start();
+if($_SESSION["email"] == "")
+{
+	header("location:login.php?err=em");
+}
 ?>
 <html>
 <head>
@@ -56,7 +60,12 @@ session_start();
 
         </div>
     </nav>
-
+<div class="container" align="right">
+	<span style="color:red;">HELLO </span>
+	<span><?php echo $_SESSION["email"];?>
+	<a href="logout_php.php" role="button" class="btn btn-primary btn-xs">Logout</a>
+	</span>
+	</div>
 <div class="container">
 
 <div class="page-header" style="">
@@ -71,7 +80,7 @@ session_start();
 	 </div>
 		<div class="row">
             <div class="col-lg-4">
-			  <form  class="form-horizontal" role="form" action="participant_reg.php" method="post">
+			  <form  class="form-horizontal" role="form" action="reg.php" method="post">
                 <div class="form-group">
 				<label for="InputName">Enter Full Name</label>
 					<div class="input-group col-sm-12">
@@ -91,7 +100,13 @@ session_start();
 				<div class="form-group">
 				<label for="InputName">Enter Team Name </label>
 					<div class="input-group col-sm-12">
-                        <input type="text" class="form-control" name="team1" id="InputName" placeholder="Team Name" required>
+                        <select class="form-control" name="team1" id="InputName" required>
+						<option value="1"> team 1 </option>
+						<option value="2"> team 2 </option>
+						<option value="3"> team 3 </option>
+						<option value="4"> team 4 </option>
+						<option value="5"> team 5 </option>
+						</select>
                         <span class="input-group-addon" style="color:red;"><span class="glyphicon glyphicon-asterisk"></span></span>
 					</div>
 				</div>
@@ -140,8 +155,13 @@ session_start();
 				<div class="form-group">
 				<label for="InputName">Enter Team Name </label>
 					<div class="input-group col-sm-12">
-                        <input type="text" class="form-control" name="team2" id="InputName" placeholder="Team Name" >
-                        
+                        <select class="form-control" name="team2" id="InputName" required>
+						<option value="1"> team 1 </option>
+						<option value="2"> team 2 </option>
+						<option value="3"> team 3 </option>
+						<option value="4"> team 4 </option>
+						<option value="5"> team 5 </option>
+						</select>
 					</div>
 				</div>
 				<div class="form-group">
@@ -190,7 +210,13 @@ session_start();
 				<div class="form-group">
 				<label for="InputName">Enter Team Name </label>
 					<div class="input-group col-sm-12">
-                        <input type="text" class="form-control" name="team3" id="InputName" placeholder="Team Name" >
+                        <select class="form-control" name="team3" id="InputName" required>
+						<option value="1"> team 1 </option>
+						<option value="2"> team 2 </option>
+						<option value="3"> team 3 </option>
+						<option value="4"> team 4 </option>
+						<option value="5"> team 5 </option>
+						</select>
                         
 					</div>
 				</div>
@@ -240,8 +266,13 @@ session_start();
 				<div class="form-group">
 				<label for="InputName">Enter Team Name </label>
 					<div class="input-group col-sm-12">
-                        <input type="text" class="form-control" name="team4" id="InputName" placeholder="Team Name" >
-                        
+                        <select class="form-control" name="team4" id="InputName" required>
+						<option value="1"> team 1 </option>
+						<option value="2"> team 2 </option>
+						<option value="3"> team 3 </option>
+						<option value="4"> team 4 </option>
+						<option value="5"> team 5 </option>
+						</select>
 					</div>
 				</div>
 				<div class="form-group">
@@ -290,8 +321,13 @@ session_start();
 				<div class="form-group">
 				<label for="InputName">Enter Team Name </label>
 					<div class="input-group col-sm-12">
-                        <input type="text" class="form-control" name="team5" id="InputName" placeholder="Team Name" >
-                        
+                        <select class="form-control" name="team5" id="InputName" required>
+						<option value="1"> team 1 </option>
+						<option value="2"> team 2 </option>
+						<option value="3"> team 3 </option>
+						<option value="4"> team 4 </option>
+						<option value="5"> team 5 </option>
+						</select>
 					</div>
 				</div>
 				<div class="form-group">
@@ -340,8 +376,13 @@ session_start();
 				<div class="form-group">
 				<label for="InputName">Enter Team Name </label>
 					<div class="input-group col-sm-12">
-                        <input type="text" class="form-control" name="team6" id="InputName" placeholder="Team Name" >
-                        
+                        <select class="form-control" name="team6" id="InputName" required>
+						<option value="1"> team 1 </option>
+						<option value="2"> team 2 </option>
+						<option value="3"> team 3 </option>
+						<option value="4"> team 4 </option>
+						<option value="5"> team 5 </option>
+						</select>
 					</div>
 				</div>
 				<div class="form-group">
@@ -390,8 +431,13 @@ session_start();
 				<div class="form-group">
 				<label for="InputName">Enter Team Name </label>
 					<div class="input-group col-sm-12">
-                        <input type="text" class="form-control" name="team7" id="InputName" placeholder="Team Name" >
-                        
+                        <select class="form-control" name="team7" id="InputName" required>
+						<option value="1"> team 1 </option>
+						<option value="2"> team 2 </option>
+						<option value="3"> team 3 </option>
+						<option value="4"> team 4 </option>
+						<option value="5"> team 5 </option>
+						</select>
 					</div>
 				</div>
 				<div class="form-group">
@@ -440,8 +486,13 @@ session_start();
 				<div class="form-group">
 				<label for="InputName">Enter Team Name </label>
 					<div class="input-group col-sm-12">
-                        <input type="text" class="form-control" name="team8" id="InputName" placeholder="Team Name" >
-                        
+                       <select class="form-control" name="team8" id="InputName" required>
+						<option value="1"> team 1 </option>
+						<option value="2"> team 2 </option>
+						<option value="3"> team 3 </option>
+						<option value="4"> team 4 </option>
+						<option value="5"> team 5 </option>
+						</select>
 					</div>
 				</div>
 				<div class="form-group">
@@ -490,8 +541,13 @@ session_start();
 				<div class="form-group">
 				<label for="InputName">Enter Team Name </label>
 					<div class="input-group col-sm-12">
-                        <input type="text" class="form-control" name="team9" id="InputName" placeholder="Team Name" >
-                        
+                        <select class="form-control" name="team9" id="InputName" required>
+						<option value="1"> team 1 </option>
+						<option value="2"> team 2 </option>
+						<option value="3"> team 3 </option>
+						<option value="4"> team 4 </option>
+						<option value="5"> team 5 </option>
+						</select>
 					</div>
 				</div>
 				<div class="form-group">
@@ -540,8 +596,13 @@ session_start();
 				<div class="form-group">
 				<label for="InputName">Enter Team Name </label>
 					<div class="input-group col-sm-12">
-                        <input type="text" class="form-control" name="team10" id="InputName" placeholder="Team Name" >
-                        
+                        <select class="form-control" name="team10" id="InputName" required>
+						<option value="1"> team 1 </option>
+						<option value="2"> team 2 </option>
+						<option value="3"> team 3 </option>
+						<option value="4"> team 4 </option>
+						<option value="5"> team 5 </option>
+						</select>
 					</div>
 				</div>
 				<div class="form-group">

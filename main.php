@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <?php
 session_start();
+if($_SESSION["email"] == "")
+{
+	header("location:login.php?err=em");
+}
 ?>
 <?php
 if(isset($_GET['err'])){
@@ -66,12 +70,35 @@ if(isset($_GET['err'])){
 
         </div>
     </nav>
+	<div class="container" align="right">
+	<span style="color:red;">HELLO </span>
+	<span><?php echo $_SESSION["email"];?>
+	<a href="logout_php.php" role="button" class="btn btn-primary btn-xs">Logout</a>
+	</span>
+	</div>
 	<div class="container">
 	<button type="button" class="btn btn-info btn-block btn-lg"> your previous registrations</button>
 	<br>
 	<?php
-		
+	include("connection.php");
+	$email = $_SESSION["email"];
+		$sql ="Select * from yes_payment where email='$email'";
+		$result = mysqli_query($con, $sql);
+
+		if (mysqli_num_rows($result) > 0) {
+		while($row = mysqli_fetch_row($result)) 
+		{
+        echo "Ref no: " . $row[0]. " - Name: " . $row[1]. " " . $row[2]. "<br>";
+		}
+		} 
+		else 
+		{
+		echo "<center>no transactions yet!</center><br><br><br>";
+		}
+
+				
 	?>
+	<br><br>
 	</div>
 
 <!-- <div class="btn-group btn-group-justified">
@@ -89,9 +116,9 @@ if(isset($_GET['err'])){
 <br>
 -->
 <div class="container">
-  <a href="#" role="button" class="btn btn-primary btn-lg btn-block">vehicle registration</a>
-  <a href="#" role="button" class="btn btn-primary btn-lg btn-block">member registration</a>
-  <a href="#" role="button" class="btn btn-primary btn-lg btn-block">food and accomodation</a>
+  <a href="vehicle.php" role="button" class="btn btn-primary btn-lg btn-block">vehicle registration</a>
+  <a href="participant.php" role="button" class="btn btn-primary btn-lg btn-block">member registration</a>
+  <a href="food.php" role="button" class="btn btn-primary btn-lg btn-block">food and accomodation</a>
 </div>
 </body>
 </html>

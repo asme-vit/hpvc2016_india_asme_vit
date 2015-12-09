@@ -1,5 +1,9 @@
 <?php
 session_start();
+if($_SESSION["email"] == "")
+{
+	header("location:login.php?err=em");
+}
 ?>
 <?php
 //    if(!isset($_POST['g-recaptcha-response'])){
@@ -15,10 +19,7 @@ session_start();
  //           $response = json_decode($response, true);
 
  //       if($response["success"] === true){
-             //   $email=$_SESSION["user"];
-			//	$name=$_SESSION["name"];
-			$email="karanjdesai2013@gmail.com";
-			$name="dev_check";
+                $email=$_SESSION["email"];
                 $food=$_POST['food'];
                 $acc=$_POST['acc'];
                 $no=$_POST['no'];
@@ -45,7 +46,7 @@ session_start();
 					}
 					else
 					{
-                        $sql="INSERT INTO food values('$email','$name','$food','$acc','$no','$amount_food_total','$amount_acc_total','$amount','$refno')";
+                        $sql="INSERT INTO food values('$email','$food','$acc','$no','$amount_food_total','$amount_acc_total','$amount','$refno')";
                         $res=mysqli_query($con,$sql);
 					
                             //Payment gateway redirection

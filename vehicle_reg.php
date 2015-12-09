@@ -1,5 +1,9 @@
 <?php
 session_start();
+if($_SESSION["email"] == "")
+{
+	header("location:login.php?err=em");
+}
 ?>
 <?php
 //    if(!isset($_POST['g-recaptcha-response'])){

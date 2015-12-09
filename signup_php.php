@@ -18,7 +18,7 @@ if (mysqli_query($con, $sql))
 
 		$_SESSION["name"] ="$_POST[uname]";
 		$_SESSION["email"] ="$_POST[email]";
-		
+		$_SESSION["logout"] = "no";
 		header("location:main.php");
 		}
 else {

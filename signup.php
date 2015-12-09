@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <?php
+session_start();
+?>
+<?php
 if(isset($_GET['err'])){
     if ($_GET['err']=="em") {
         echo '<script>
@@ -10,7 +13,7 @@ if(isset($_GET['err'])){
 ?>
 <html>
 <head>
-<title>SIGNUP</title>
+<title>SIGNUP|HPVC2016</title>
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />

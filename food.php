@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <?php
 session_start();
+if($_SESSION["email"] == "")
+{
+	header("location:login.php?err=em");
+}
 ?>
 <html>
 <head>
@@ -57,7 +61,12 @@ session_start();
 
         </div>
     </nav>
-
+<div class="container" align="right">
+	<span style="color:red;">HELLO </span>
+	<span><?php echo $_SESSION["email"];?>
+	<a href="logout_php.php" role="button" class="btn btn-primary btn-xs">Logout</a>
+	</span>
+	</div>
 <div class="container">
 
 <div class="page-header" style="">
