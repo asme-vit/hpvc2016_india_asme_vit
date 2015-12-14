@@ -46,7 +46,6 @@ if($_SESSION["email"] == "")
 					}
 					else
 					{
-						$amount = 1;				//overwrite amount
                         $sql="INSERT INTO food values('$email','$food','$acc','$no','$amount_food_total','$amount_acc_total','$amount','$refno')";
                         $res=mysqli_query($con,$sql);
 					

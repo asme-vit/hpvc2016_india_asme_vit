@@ -139,8 +139,8 @@ if($_SESSION["email"] == "")
 						 {
 							 $flag = $flag + 1;
 						 }
-					 $amount = $flag * 1000; 
-					 $amount = 1;				//overwrite amount
+					 $amount = $flag * 1000;
+					 
 					 if(!empty($name1)){
 							$sql="INSERT INTO participant values('$refno','$name1','$col1','$team1','$colr1','$email1','$phone1','$amount')";
 							$res=mysqli_query($con, $sql);
@@ -205,7 +205,7 @@ if($_SESSION["email"] == "")
 							$name = $name1;
 							$tran= "HPVC".$refno;
 							
-							echo $amount;
+							//echo $amount;
                             echo $tran;
 							
 

@@ -45,7 +45,6 @@ if($_SESSION["email"] == "")
 					
                             //Payment gateway redirection
                             $amount=7000;
-							$amount = 1;				//overwrite amount!
                             $tran= "HPVC".$refno;
                             echo $tran;
 
@@ -67,7 +66,6 @@ if($_SESSION["email"] == "")
 						//Payment gateway redirection
 						
                             $amount = 7000;
-							$amount = 1;				//overwrite amount!
                             $tran= "HPVC".$refno;
                             echo $tran;
 
