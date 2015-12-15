@@ -1,24 +1,17 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <?php
 session_start();
 if($_SESSION["email"] == "")
 {
 	header("location:login.php?err=em");
 }
-?>
-<?php
-if(isset($_GET['err'])){
-    if ($_GET['err']=="em") {
-        echo '<script>
-            alert("your email is nither in vehicle nor in participant registration!");
-        </script>';
-    }
-}
+$email = $_SESSION["email"];
 ?>
 <html>
 <head>
-    <title>Registration | HPVC INDIA 2016</title>
-		<meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <title>VEHICLE REGISTRATION | HPVC-2016</title>
+    	<meta charset="utf-8" />
 		<meta name="language" content="en-us"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -40,23 +33,6 @@ if(isset($_GET['err'])){
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<style>
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-	posiion:relative;
-}
-th, td {
-    padding: 5px;
-    text-align: left;
-}
-</style>
-<script>
-function func()
-{
-	alert("Coming Soon...");
-}
-</script>
 </head>
 <body>
 
@@ -81,7 +57,7 @@ function func()
             <div id="transparent" style="padding-top: 15px;">
             <div class="collapse navbar-collapse" id="main-navbar-collapse" style="margin-right: 0px;">
                 <ul class="nav navbar-nav navbar-left" style="margin-left: 250px;font-size:large;">
-                    <li ><a href="http://hpvcindia.in#top">Home</a></li>
+                    <li ><a href="main.php">MyHome</a></li>
                     <li><a href="http://hpvcindia.in#about">About</a></li>
                     <!--<li><a href="#services">Sponsors</a></li>-->
                     <li><a href="http://hpvcindia.in#rules">Rules</a></li>
@@ -103,66 +79,75 @@ function func()
 	<a href="logout_php.php" role="button" class="btn btn-primary btn-xs">Logout</a>
 	</span>
 	</div>
-	<div class="container">
-	<button type="button" class="btn btn-info btn-block btn-lg"> Your Previous Registrations</button>
-	<br>
-	<?php
-	include("connection.php");
-	$email = $_SESSION["email"];
-		$sql ="Select * from yes_payment where email='$email'";
-		$result = mysqli_query($con, $sql);
-		
-		if (mysqli_num_rows($result) > 0) {
-			echo "<table style='width:100%'>
-			<tr>
-			<th>Reference no.</th>
-			<th>Email</th>
-			<th>TSPL Transaction ID</th>
-			<th>Bank Reference No.</th>
-			<th>Amount</th>
-			<th>Transaction Date</th>
-			</tr>";
-		while($row = mysqli_fetch_row($result)) 
-		{
-			echo "<tr>";
-        echo "<td> " . $row[0]. " <td> " . $row[1]. "<td> " . $row[2]. "<td> " .$row[3] . "<td> " .$row[5]. "<td> " .$row[6];
-			echo "</tr>";
-		}
-		echo "</table>";
-		} 
-		else 
-		{
-		echo "<center>no transactions yet!</center><br><br><br>";
-		}
 
-				
-	?>
-	<br><br>
-	</div>
-
-<!-- <div class="btn-group btn-group-justified">
-  <div class="btn-group">
-    <button type="button" class="btn btn-primary">Vehicle Registration</button>
-  </div>
-  <div class="btn-group">
-    <button type="button" class="btn btn-primary">Member Registration</button>
-  </div>
-  <div class="btn-group">
-    <button type="button" class="btn btn-primary">Food and Accomodation</button>
-  </div>
-</div>
-<br>
-<br>
--->
 <div class="container">
-  <a href="vehicle_pre.php" role="button" class="btn btn-primary btn-lg btn-block">Vehicle registration</a>
-  <a href="participant.php" role="button" class="btn btn-primary btn-lg btn-block">Member registration</a>
-<!--  <a href="food.php">
--->
-  <button type="button" class="btn btn-primary btn-lg btn-block" onclick="func();">Food and Accomodation</button>
-<!--
-</a>
--->
+
+<div class="page-header" style="">
+    <h2 style="color:black;text-shadow:none;">Vehicle Registration Form</h3>
 </div>
+
+<!-- Registration form - START -->
+<div class="container">
+    <div class="row">
+        <form role="form" action="vehicle_pre_reg.php" method="post">
+		<div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div class="well well-sm"><strong><span style="color:red;" class="glyphicon glyphicon-asterisk"></span>&nbsp;Required Field</strong></div>
+                <div class="form-group">
+                    <label for="InputName">Enter Team Name</label>
+                    <div class="input-group">
+                         <select class="form-control" name="teamnm" id="InputName" required>
+						<option value="1"> team 1 </option>
+						<option value="2"> team 2 </option>
+						<option value="3"> team 3 </option>
+						<option value="4"> team 4 </option>
+						<option value="5"> team 5 </option>
+						</select>
+                        <span class="input-group-addon" style="color:red;"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label for="InputEmail">How many members does your human powered vehicle team have?</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="InputEmailSecond" name="q1" placeholder="No. of People" required>
+                        <span class="input-group-addon" style="color:red;"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label for="InputEmail">How many members in your team are actively engaged in the design, fabrication, and testing of your vehicle?</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="InputEmailSecond" name="q2" placeholder="No. of People" required>
+                        <span class="input-group-addon" style="color:red;"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label for="InputEmail">How many members intend to travel to with the team to HPVC India 2016?</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="InputEmailSecond" name="q3" placeholder="No. of People" required>
+                        <span class="input-group-addon" style="color:red;"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label for="InputEmail">How many of the members in that intend to travel with the team are actively engaged in the design, fabrication and testing of your vehicle?</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="InputEmailSecond" name="q4" placeholder="No. of People" required>
+                        <span class="input-group-addon" style="color:red;"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+					<div class="col-lg-3"></div>
+					<div class="col-lg-6">
+                <div class="g-recaptcha" data-sitekey="6LeMcg8TAAAAAMfnSdEUJnVOnnkgl0OKxF4SfNqz"></div><br>
+                <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right btn-block">
+            </div>
+			</div>
+        </form>
+        
+</div>
+<!-- Registration form - END -->
+
+</div>
+<p><br>
+</p>
+
 </body>
 </html>
