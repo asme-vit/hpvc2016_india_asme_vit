@@ -56,6 +56,10 @@ function func()
 {
 	alert("Coming Soon...");
 }
+function func1()
+{
+	alert("Starts 21st Dec, 2015");
+}
 </script>
 </head>
 <body>
@@ -156,7 +160,12 @@ function func()
 -->
 <div class="container">
   <a href="vehicle_pre.php" role="button" class="btn btn-primary btn-lg btn-block">Vehicle registration</a>
-  <a href="participant.php" role="button" class="btn btn-primary btn-lg btn-block">Member registration</a>
+<!--  <a href="participant.php">
+-->
+  <button type="button" class="btn btn-primary btn-lg btn-block" onclick="func1();">Member registration</button>
+<!--
+</a>
+-->
 <!--  <a href="food.php">
 -->
   <button type="button" class="btn btn-primary btn-lg btn-block" onclick="func();">Food and Accomodation</button>
