@@ -48,7 +48,7 @@ if($_SESSION["email"] == "")
                             $tran= "HPVC".$refno;
                             echo $tran;
 
-         /*                  echo '<form id="payment" method="POST" action="https://academics.vit.ac.in/online_application2/onlinepayment/Online_pay_request1.asp">';
+							echo '<form id="payment" method="POST" action="https://academics.vit.ac.in/online_application2/onlinepayment/Online_pay_request1.asp">';
                             echo'<input type="hidden" name="id_trans" value="'.$tran.'">
                             <input type="hidden" name="id_name" value="'.$name.'">
                             <input type="hidden" name="id_event" value="11">
@@ -56,7 +56,7 @@ if($_SESSION["email"] == "")
                             <input type="hidden" name="id_merchant" value="1010">
                             <input type="hidden" name="id_password" value="hpV6!1uLqw9">';
                             echo '</form>'; 
-		*/ 
+		 
 					}
                 	else
 					{
@@ -65,11 +65,11 @@ if($_SESSION["email"] == "")
 						
 						//Payment gateway redirection
 						
-                            $amount=7000;
+                            $amount = 7000;
                             $tran= "HPVC".$refno;
                             echo $tran;
 
-         /*                  echo '<form id="payment" method="POST" action="https://academics.vit.ac.in/online_application2/onlinepayment/Online_pay_request1.asp">';
+							echo '<form id="payment" method="POST" action="https://academics.vit.ac.in/online_application2/onlinepayment/Online_pay_request1.asp">';
                             echo'<input type="hidden" name="id_trans" value="'.$tran.'">
                             <input type="hidden" name="id_name" value="'.$name.'">
                             <input type="hidden" name="id_event" value="11">
@@ -77,7 +77,7 @@ if($_SESSION["email"] == "")
                             <input type="hidden" name="id_merchant" value="1010">
                             <input type="hidden" name="id_password" value="hpV6!1uLqw9">';
                             echo '</form>'; 
-		*/ 
+		 
 					}
             
 

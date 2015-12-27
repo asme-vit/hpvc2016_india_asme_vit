@@ -233,7 +233,7 @@
                 				$headers .= $attachment.$eol.$eol;
                 				$headers .= "--".$separator."--";
                 				
-             //   				mail($to, $subject, "", $headers);
+                				mail($to, $subject, "", $headers);
 
                             }
                        		else if($status=="0399")

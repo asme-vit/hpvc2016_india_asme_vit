@@ -14,10 +14,17 @@ if(isset($_GET['err'])){
         </script>';
     }
 }
+if(isset($_GET['err'])){
+    if ($_GET['err']=="survey") {
+        echo '<script>
+            alert("ThankYou for your Time!");
+        </script>';
+    }
+}
 ?>
 <html>
 <head>
-    <title>STAGE2 REGISTRATION | HPVC-2016</title>
+    <title>Registration | HPVC INDIA 2016</title>
 		<meta charset="utf-8" />
 		<meta name="language" content="en-us"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -51,6 +58,16 @@ th, td {
     text-align: left;
 }
 </style>
+<script>
+function func()
+{
+	alert("Coming Soon...");
+}
+function func1()
+{
+	alert("Starts 21st Dec, 2015");
+}
+</script>
 </head>
 <body>
 
@@ -98,7 +115,7 @@ th, td {
 	</span>
 	</div>
 	<div class="container">
-	<button type="button" class="btn btn-info btn-block btn-lg"> your previous registrations</button>
+	<button type="button" class="btn btn-info btn-block btn-lg"> Your Previous Registrations</button>
 	<br>
 	<?php
 	include("connection.php");
@@ -109,12 +126,12 @@ th, td {
 		if (mysqli_num_rows($result) > 0) {
 			echo "<table style='width:100%'>
 			<tr>
-			<th>reference no.</th>
-			<th>email</th>
-			<th>tpsltranid</th>
-			<th>bank_refno</th>
-			<th>amount</th>
-			<th>txndate</th>
+			<th>Reference no.</th>
+			<th>Email</th>
+			<th>TSPL Transaction ID</th>
+			<th>Bank Reference No.</th>
+			<th>Amount</th>
+			<th>Transaction Date</th>
 			</tr>";
 		while($row = mysqli_fetch_row($result)) 
 		{
@@ -136,22 +153,28 @@ th, td {
 
 <!-- <div class="btn-group btn-group-justified">
   <div class="btn-group">
-    <button type="button" class="btn btn-primary">vehicle registration</button>
+    <button type="button" class="btn btn-primary">Vehicle Registration</button>
   </div>
   <div class="btn-group">
-    <button type="button" class="btn btn-primary">member registration</button>
+    <button type="button" class="btn btn-primary">Member Registration</button>
   </div>
   <div class="btn-group">
-    <button type="button" class="btn btn-primary">food and accomodation</button>
+    <button type="button" class="btn btn-primary">Food and Accomodation</button>
   </div>
 </div>
 <br>
 <br>
 -->
 <div class="container">
-  <a href="vehicle.php" role="button" class="btn btn-primary btn-lg btn-block">vehicle registration</a>
-  <a href="participant.php" role="button" class="btn btn-primary btn-lg btn-block">member registration</a>
-  <a href="food.php" role="button" class="btn btn-primary btn-lg btn-block">food and accomodation</a>
+  <a href="vehicle_pre.php" role="button" class="btn btn-primary btn-lg btn-block">Vehicle registration</a>
+  <a href="participant.php" role="button" class="btn btn-primary btn-lg btn-block">Member registration</a>
+<!--  <a href="food.php">
+-->
+  <button type="button" class="btn btn-primary btn-lg btn-block" onclick="func();">Food and Accomodation</button>
+<!--
+</a>
+-->
+	<a href="survey.php" role="button" class="btn btn-primary btn-lg btn-block">Survey</a>
 </div>
 </body>
 </html>

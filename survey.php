@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <?php
 session_start();
 if($_SESSION["email"] == "")
@@ -10,7 +10,7 @@ $email = $_SESSION["email"];
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>VEHICLE REGISTRATION | HPVC-2016</title>
+    <title>Survey | HPVC-2016</title>
     	<meta charset="utf-8" />
 		<meta name="language" content="en-us"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -83,19 +83,16 @@ $email = $_SESSION["email"];
 <div class="container">
 
 <div class="page-header" style="">
-    <h2 style="color:black;text-shadow:none;">Vehicle Registration Form</h3>
-	&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-	<span style="color:red;text-shadow:none;">*vehicle reg fee:6000rs &nbsp &nbsp &nbsp</span>
-	<span style="color:red;text-shadow:none;">*captian reg fee:1000rs &nbsp &nbsp &nbsp</span>
-	<span style="color:red;text-shadow:none;">*Total reg fee:7000rs</span>
-	
+    <h2 style="color:black;text-shadow:none;">Survery</h2>
+	<center>
+	<h4 style="color:red;text-shadow:none;align:center">Mandatory for all participants*</h4>
+	</center>
 </div>
 
 <!-- Registration form - START -->
 <div class="container">
     <div class="row">
-        <form role="form" action="vehicle_reg.php" method="post">
+        <form role="form" action="survey_reg.php" method="post">
 		<div class="col-lg-3"></div>
             <div class="col-lg-6">
                 <div class="well well-sm"><strong><span style="color:red;" class="glyphicon glyphicon-asterisk"></span>&nbsp;Required Field</strong></div>
@@ -107,55 +104,106 @@ $email = $_SESSION["email"];
                         <span class="input-group-addon" style="color:red;"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
                 </div>                
-				<div class="form-group">
-                    <label for="InputMessage">Enter Phone no.</label>
-                    <div class="input-group">
-                        <span class="input-group-addon">+91</span>
-                        <input type="text" name="phone" id="InputMessage" placeholder="Enter Mobile No" class="form-control"required></textarea>
-                        <span class="input-group-addon" style="color:red;"><span class="glyphicon glyphicon-asterisk"></span></span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="InputEmail">Enter Email</label>
-                    <div class="input-group">
-                   <?php echo '<input type="email" class="form-control" id="InputEmailFirst" name="email" value='.$email.'>'
-				   ?>
-                        <span class="input-group-addon" style="color:red;"><span class="glyphicon glyphicon-asterisk"></span></span>
-                    </div>
-                </div>
                 <div class="form-group">
                     <label for="InputName">Enter Team Name</label>
                     <div class="input-group">
                          <select class="form-control" name="teamnm" id="InputName" required>
-						<option value="1"> team 1 </option>
-						<option value="2"> team 2 </option>
-						<option value="3"> team 3 </option>
-						<option value="4"> team 4 </option>
-						<option value="5"> team 5 </option>
+								<option value="CYCLORDS"> CYCLORDS </option>
+								<option value="Adolfus"> Adolfus </option>
+								<option value="ACET"> ACET </option>
+								<option value="NAKAMAS"> NAKAMAS</option>
+								<option value="PRAESTO"> PRAESTO </option>
+								<option value="Sayugavan"> Sayugavan </option>
+								<option value="TEAM CYCLONE"> TEAM CYCLONE</option>
+								<option value="Vector"> Vector </option>
+								<option value="Fateh"> Fateh </option>
+								<option value="THE GUTSY GLADIATORS"> THE GUTSY GLADIATORS </option>
+								<option value="Mechriders"> Mechriders </option>
+								<option value="Team Zenith"> Team Zenith </option>
+								<option value="Alacrity"> Alacrity </option>
+								<option value="ISM HAWKS"> ISM HAWKS </option>
+								<option value="FLARE"> FLARE </option>
+								<option value="Team Alpha"> Team Alpha </option>
+								<option value="Team CIVET 2.0"> Team CIVET 2.0 </option>
+								<option value="KETAV"> KETAV </option>
+								<option value="Team Advait"> Team Advait </option>
+								<option value="Team Vijayan V3.0"> Team Vijayan V3.0 </option>
+								<option value="Ajna Chakra"> Ajna Chakra </option>
+								<option value="MHSSC CICLISMO"> MHSSC CICLISMO </option>
+								<option value="Aerofighter"> Aerofighter </option>
+								<option value="TEAM PRAJVLYA"> TEAM PRAJVLYA </option>
+								<option value="Vello Verde Manipal"> Vello Verde Manipal </option>
+								<option value="The Panthers"> The Panthers </option>
+								<option value="XLeration"> XLeration </option>
+								<option value="Aaveg"> Aaveg </option>
+								<option value="Tejas"> Tejas </option>
+								<option value="ECORIDERS"> ECORIDERS </option>
+								<option value="BLUE STREAK 3.0"> BLUE STREAK 3.0 </option>
+								<option value="NSIT iRacerz"> NSIT iRacerz </option>
+								<option value="XLR8 NMIMS Shirpur"> XLR8 - NMIMS Shirpur </option>
+								<option value="ELEMENTRIX">ELEMENTRIX</option>
+								<option value="TEAM HELIOS"> TEAM HELIOS</option>
+								<option value="XLR8 - SRM"> XLR8 - SRM </option>
+								<option value="CYCLOPATHS"> CYCLOPATHS</option>
+								<option value="Team Abhiyant"> Team Abhiyant</option>
+								<option value="Team Anant "> Team Anant </option>
+								<option value="AMU-HPVC"> AMU-HPVC</option>
+                                <option value="Team Falcon"> Team Falcon</option>
 						</select>
                         <span class="input-group-addon" style="color:red;"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
                 </div>
 				<div class="form-group">
-                    <label for="InputName">Enter College Name</label>
+                    <label for="InputName">Gender</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" name="colnm" id="InputName" placeholder="Enter Name" required>
+                       <select class="form-control" name="gen" id="InputName" required>
+						<option value="M">Male </option>
+						<option value="F">Female </option>
+						</select>
                         <span class="input-group-addon" style="color:red;"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
-                </div>				
+                </div>	
+				<div class="form-group">
+                    <label for="InputName">In which age-group do you belong?</label>
+                    <div class="input-group">
+                       <select class="form-control" name="age" id="InputName" required>
+						<option value="18-22">18-22 </option>
+						<option value="22-25">22-25 </option>
+						<option value="above 25">Above 25 </option>
+						</select>
+                        <span class="input-group-addon" style="color:red;"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>						
 
                 <div class="form-group">
-                    <label for="InputEmail">Enter College Registration Number</label>
+                    <label for="InputEmail">Which degree you are pursuing? (e.g. B.tech, B.E., M.Tech, M.E. etc) </label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="regno" name="regno" placeholder="Registration Number" required>
+                        <input type="text" class="form-control" id="regno" name="degree" placeholder="Degree" required>
                         <span class="input-group-addon" style="color:red;"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="InputEmail">Enter ASME ID</label>
-                    <input type="text" class="form-control" id="asme" name="asmeid" value="asme id">
+				
+				<div class="form-group">
+                    <label for="InputEmail">In which branch you are pursuing your degree ? </label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="regno" name="branch" placeholder="Branch" required>
+                        <span class="input-group-addon" style="color:red;"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
                 </div>
-					
+                
+				<div class="form-group">
+                    <label for="InputName">In which year you are studying?</label>
+                    <div class="input-group">
+                       <select class="form-control" name="year" id="InputName" required>
+						<option value="first">First</option>
+						<option value="second">Second </option>
+						<option value="third">Third </option>
+						<option value="fourth">Fourth </option>
+						<option value="fifth">Fifth</option>
+						</select>
+                        <span class="input-group-addon" style="color:red;"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
 					<div class="col-lg-3"></div>
 					<div class="col-lg-6">
                 <div class="g-recaptcha" data-sitekey="6LeMcg8TAAAAAMfnSdEUJnVOnnkgl0OKxF4SfNqz"></div><br>

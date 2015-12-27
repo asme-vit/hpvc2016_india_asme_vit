@@ -139,7 +139,8 @@ if($_SESSION["email"] == "")
 						 {
 							 $flag = $flag + 1;
 						 }
-					 $amount = $flag * 1000; 
+					 $amount = $flag * 1000;
+					 
 					 if(!empty($name1)){
 							$sql="INSERT INTO participant values('$refno','$name1','$col1','$team1','$colr1','$email1','$phone1','$amount')";
 							$res=mysqli_query($con, $sql);
@@ -204,11 +205,11 @@ if($_SESSION["email"] == "")
 							$name = $name1;
 							$tran= "HPVC".$refno;
 							
-							echo $amount;
+							//echo $amount;
                             echo $tran;
 							
 
-         /*                 echo '<form id="payment" method="POST" action="https://academics.vit.ac.in/online_application2/onlinepayment/Online_pay_request1.asp">';
+							echo '<form id="payment" method="POST" action="https://academics.vit.ac.in/online_application2/onlinepayment/Online_pay_request1.asp">';
                             echo'<input type="hidden" name="id_trans" value="'.$tran.'">
                             <input type="hidden" name="id_name" value="'.$name.'">
                             <input type="hidden" name="id_event" value="11">
@@ -216,7 +217,7 @@ if($_SESSION["email"] == "")
                             <input type="hidden" name="id_merchant" value="1010">
                             <input type="hidden" name="id_password" value="hpV6!1uLqw9">';
                             echo '</form>'; 
-		*/ 
+		
 
 
 mysqli_close($con);
