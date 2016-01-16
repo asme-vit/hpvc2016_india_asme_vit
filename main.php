@@ -166,7 +166,7 @@ function func1()
 <br>
 -->
 <div class="container">
-  <a href="vehicle_pre.php" role="button" class="btn btn-primary btn-lg btn-block">Vehicle registration</a>
+  <a href="vehicle_pre.php" role="button" class="btn btn-primary btn-lg btn-block" disabled>Vehicle registration</a>
   <a href="participant.php" role="button" class="btn btn-primary btn-lg btn-block">Member registration</a>
 <!--  <a href="food.php">
 -->

@@ -139,7 +139,7 @@ if($_SESSION["email"] == "")
 						 {
 							 $flag = $flag + 1;
 						 }
-					 $amount = $flag * 1000;
+					 $amount = $flag * 1200;
 					 
 					 if(!empty($name1)){
 							$sql="INSERT INTO participant values('$refno','$name1','$col1','$team1','$colr1','$email1','$phone1','$amount')";
