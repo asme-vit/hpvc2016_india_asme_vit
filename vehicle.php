@@ -91,7 +91,7 @@ $email = $_SESSION["email"];
 	<span style="color:red;text-shadow:none;">*Total reg fee:7000rs</span>
 	
 </div>
-
+</div>
 <!-- Registration form - START -->
 <div class="container">
     <div class="row">
